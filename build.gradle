@@ -11,8 +11,9 @@ description = 'Demo project for Spring Boot'
 
 bootJar {
 	enabled = true
-    archiveFileName = "app.jar"
+    archiveFileName = "Web-API-0.0.1-SNAPSHOT.jar"
 }
+
 
 jar {
     enabled = false
