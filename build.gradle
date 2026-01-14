@@ -9,6 +9,15 @@ group = 'com.setec'
 version = '0.0.1-SNAPSHOT'
 description = 'Demo project for Spring Boot'
 
+bootJar {
+	enabled = true
+    archiveFileName = "app.jar"
+}
+
+jar {
+    enabled = false
+}
+
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(21)
