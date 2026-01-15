@@ -46,7 +46,7 @@ public class ProductController {
 	}
 
 	@PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-	public ResponseEntity<?> addProduct(@Valid @ModelAttribute PutProductDAO postProductDAO, BindingResult result)
+	public ResponseEntity<?> addProduct(@Valid @ModelAttribute PostProductDAO postProductDAO, BindingResult result)
 			throws IOException {
 
 		if (result.hasErrors()) {
