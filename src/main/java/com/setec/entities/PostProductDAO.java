@@ -29,39 +29,5 @@ public class PostProductDAO {
 
     @NotNull(message = "Image file is required")
     private MultipartFile file;
-
-	public String getProduct_name() {
-		return product_name;
-	}
-
-	public void setProduct_name(String product_name) {
-		this.product_name = product_name;
-	}
-
-	public Double getPrice() {
-		return price;
-	}
-
-	public void setPrice(Double price) {
-		this.price = price;
-	}
-
-	public Integer getQty() {
-		return qty;
-	}
-
-	public void setQty(Integer qty) {
-		this.qty = qty;
-	}
-
-	public MultipartFile getFile() {
-		return file;
-	}
-
-	public void setFile(MultipartFile file) {
-		this.file = file;
-	}
-
-	
 }
 
