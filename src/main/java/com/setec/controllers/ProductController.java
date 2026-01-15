@@ -54,7 +54,7 @@ public class ProductController {
 					.map(error -> Map.of("field", error.getField(), "message", error.getDefaultMessage())).toList());
 		}
 
-		String uploadDir = new File("myApp/static").getAbsolutePath();
+		String uploadDir = "/opt/render/project/src/uploads";
 		File dir = new File(uploadDir);
 		if (!dir.exists())
 			dir.mkdirs();
@@ -86,7 +86,7 @@ public class ProductController {
 			updateProduct.setQty(putProductDAO.getQty());
 
 			if (putProductDAO.getFile() != null) {
-				String uploadDir = new File("myApp/static").getAbsolutePath();
+				String uploadDir = "/opt/render/project/src/uploads";
 				File dir = new File(uploadDir);
 				if (!dir.exists())
 					dir.mkdirs();
@@ -122,7 +122,9 @@ public class ProductController {
 		var product = productRepositoty.findById(id);
 		if (product.isPresent()) {
 			var deleteProduct = product.get();
-			new File("myApp/" + deleteProduct.getImageUrl()).delete();
+			new File("/opt/render/project/src/uploads/" +
+			        deleteProduct.getImageUrl().replace("/static/", "")
+			).delete();
 			productRepositoty.delete(deleteProduct);
 			return ResponseEntity.status(HttpStatus.ACCEPTED).body(Map.of("message", "Product Deleted Successfully."));
 		}
