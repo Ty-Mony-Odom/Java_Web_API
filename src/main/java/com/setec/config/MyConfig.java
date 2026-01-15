@@ -14,7 +14,7 @@ import io.swagger.v3.oas.models.servers.Server;
 public class MyConfig implements WebMvcConfigurer{
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/static/**").addResourceLocations("file:/option/myApp/static/");
+		registry.addResourceHandler("/static/**").addResourceLocations("file:/opt/render/project/src/uploads/");
 		//addResourceLocations("file:/option/myApp/static/");
 	}
 	
